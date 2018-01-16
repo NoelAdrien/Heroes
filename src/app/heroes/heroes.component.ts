@@ -13,14 +13,8 @@ export class HeroesComponent implements OnInit {
   // Mock datas
   heroes: Hero[];
 
-  // Héro sélectionné
-  selectedHero: Hero;
-
   getHeroes(): void {
     this.heroService.GetHeroes().subscribe(heroesMock => this.heroes = heroesMock);
-  }
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
   }
 
   constructor(private heroService: HeroService) {
