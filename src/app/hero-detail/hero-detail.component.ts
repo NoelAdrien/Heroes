@@ -29,6 +29,9 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.GetHeroById(id).subscribe(hero => this.hero = hero);
   }
 
+  saveHero(): void {
+    this.heroService.UpdateHero(this.hero).subscribe(() => this.goBack());
+  }
   goBack(): void {
     this.location.back();
   }
